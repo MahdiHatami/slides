@@ -5,7 +5,7 @@ require.config({
         underscore: '../bower_components/underscore/underscore'
     },
     shim: {
-        "backbone": {
+        'backbone': {
             deps: ['underscore', 'jquery'],
             exports: 'Backbone'
         }
@@ -13,6 +13,9 @@ require.config({
     }
 });
 
-require(["backbone"], function (Backbone) {
-    console.log(Backbone);
+require(['models/slide', 'views/slide'], function (SlideModel, SlideView) {
+    var slide = new SlideModel({title: 'my first slide title'});
+    var slideView = new SlideView({model: slide});
+    slideView.render();
+    console.log(slideView.el);
 });
