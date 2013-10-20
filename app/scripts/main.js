@@ -15,7 +15,6 @@ require.config({
 
 require(['views/app'], function(AppView){
     window.App = {
-        //inherit the backbone evets objects
         Vent: _.extend({}, Backbone.Events)
     };
     new AppView();
