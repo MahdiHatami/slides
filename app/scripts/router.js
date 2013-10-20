@@ -11,9 +11,11 @@ define(['backbone'], function(Backbone){
         },
 
         showSlide: function(slideIndex){
-            alert( slideIndex );
+           App.Vent.trigger('changeSlide', {
+               slideIndex: slideIndex,
+               direction: 'next'
+           });
         }
-
     });
     return Main;
 });
