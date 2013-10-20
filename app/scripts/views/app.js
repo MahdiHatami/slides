@@ -3,13 +3,9 @@ define(['backbone', 'views/slides', 'collections/slides','router'], function(Bac
         el: 'body',
 
         initialize: function () {
-            var testCollection = [
-                {title: 'My first Slide'},
-                {title: 'Second Slide'}
-            ];
 
             new SlidesView({
-                collection: new SlidesCollection(testCollection)
+                collection: new SlidesCollection(window.slides)
             });
 
             App.router = new MainRouter();
